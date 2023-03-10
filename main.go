@@ -12,12 +12,12 @@ type ContaCorrente struct {
 func main() {
 	contaCorrenteRafael := ContaCorrente{"Rafael", 599, 5998, 150.5}
 	fmt.Println(contaCorrenteRafael.Sacar(50.10))
-	fmt.Println(contaCorrenteRafael.saldo)
-	fmt.Print(contaCorrenteRafael.Depositar(250))
-	fmt.Println(contaCorrenteRafael.saldo)
+	fmt.Println("Saldo atual:",contaCorrenteRafael.saldo)
+	fmt.Println(contaCorrenteRafael.Depositar(-250))
+	fmt.Println("Saldo atual:",contaCorrenteRafael.saldo)
 }
 
-
+/* Criando métodos de uso : */
 
 func (conta * ContaCorrente) Sacar (valorDoSaque float64) string{
 	var verificarSaldoPositivo = valorDoSaque > 0 && valorDoSaque <= conta.saldo
@@ -29,6 +29,9 @@ func (conta * ContaCorrente) Sacar (valorDoSaque float64) string{
 }
 
 func (conta * ContaCorrente) Depositar (valorDoDeposito float64) string{
-	conta.saldo += valorDoDeposito
-	return "Valor Depositado foi de ..."
+	if valorDoDeposito > 0{
+		conta.saldo += valorDoDeposito
+		return "Valor Depositado foi de ..."
+	}
+	return "Valor não pode ser negativo"
 }
