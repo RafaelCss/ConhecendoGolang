@@ -11,10 +11,9 @@ type ContaCorrente struct {
 
 func main() {
 	contaCorrenteRafael := ContaCorrente{"Rafael", 599, 5998, 150.5}
-	fmt.Println(contaCorrenteRafael.Sacar(50.10))
-	fmt.Println("Saldo atual:",contaCorrenteRafael.saldo)
-	fmt.Println(contaCorrenteRafael.Depositar(-250))
-	fmt.Println("Saldo atual:",contaCorrenteRafael.saldo)
+	fmt.Println(contaCorrenteRafael.Sacar(50.10), contaCorrenteRafael.saldo)
+	fmt.Println(contaCorrenteRafael.Depositar(250))
+	contaCorrenteRafael.ConsultarSaldo(contaCorrenteRafael)
 }
 
 /* Criando métodos de uso : */
@@ -34,4 +33,9 @@ func (conta * ContaCorrente) Depositar (valorDoDeposito float64) string{
 		return "Valor Depositado foi de ..."
 	}
 	return "Valor não pode ser negativo"
+}
+
+
+func (conta * ContaCorrente) ConsultarSaldo(contaUser ContaCorrente){
+	fmt.Println("Saldo atual:",contaUser.saldo)
 }
