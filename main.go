@@ -13,7 +13,7 @@ func main() {
 	contaCorrenteRafael := ContaCorrente{"Rafael", 599, 5998, 150.5}
 	fmt.Println(contaCorrenteRafael.Sacar(50.10), contaCorrenteRafael.saldo)
 	fmt.Println(contaCorrenteRafael.Depositar(250))
-	contaCorrenteRafael.ConsultarSaldo(contaCorrenteRafael)
+	contaCorrenteRafael.ConsultarSaldo(contaCorrenteRafael.saldo)
 }
 
 /* Criando métodos de uso : */
@@ -36,6 +36,6 @@ func (conta * ContaCorrente) Depositar (valorDoDeposito float64) string{
 }
 
 
-func (conta * ContaCorrente) ConsultarSaldo(contaUser ContaCorrente){
-	fmt.Println("Saldo atual:",contaUser.saldo)
+func (conta * ContaCorrente) ConsultarSaldo(saldo float64){
+	fmt.Println("Saldo atual:",saldo)
 }
