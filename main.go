@@ -14,6 +14,7 @@ func main() {
 	fmt.Println(contaCorrenteRafael.Sacar(50.10), contaCorrenteRafael.saldo)
 	fmt.Println(contaCorrenteRafael.Depositar(250))
 	contaCorrenteRafael.ConsultarSaldo(contaCorrenteRafael.saldo)
+	contaCorrenteRafael.VerificarSaldo()
 }
 
 /* Criando métodos de uso : */
@@ -35,6 +36,12 @@ func (conta * ContaCorrente) Depositar (valorDoDeposito float64) string{
 	return "Valor não pode ser negativo"
 }
 
+func (conta * ContaCorrente) VerificarSaldo(){
+	if conta.saldo > 0 {
+		fmt.Println("Saldo positivo")
+	}
+
+}
 
 func (conta * ContaCorrente) ConsultarSaldo(saldo float64){
 	fmt.Println("Saldo atual:",saldo)
