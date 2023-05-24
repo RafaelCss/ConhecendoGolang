@@ -15,6 +15,7 @@ func main() {
 	fmt.Println(contaCorrenteRafael.Depositar(250))
 	contaCorrenteRafael.ConsultarSaldo(contaCorrenteRafael.saldo)
 	contaCorrenteRafael.VerificarSaldo()
+	contaCorrenteRafael.ImprimirExtrato()
 }
 
 /* Criando métodos de uso : */
@@ -44,6 +45,11 @@ func (conta * ContaCorrente) VerificarSaldo(){
 		fmt.Println("Sem Saldo")
 	}
 
+}
+
+func (conta * ContaCorrente) ImprimirExtrato(){
+	fmt.Println("Seu saldo:", conta.saldo)
+	fmt.Println("/n dia 13/05")
 }
 
 
