@@ -40,8 +40,13 @@ func (conta * ContaCorrente) VerificarSaldo(){
 	if conta.saldo > 0 {
 		fmt.Println("Saldo positivo")
 	}
+		if conta.saldo <= 0 {
+		fmt.Println("Sem Saldo")
+	}
 
 }
+
+
 
 func (conta * ContaCorrente) ConsultarSaldo(saldo float64){
 	fmt.Println("Saldo atual:",saldo)
